@@ -1,4 +1,4 @@
-export default function BusinessList({ businesses }) {
+export default function BusinessList({ businesses = [] }) {
   return (<div>
     {
       businesses.map((business, i) => <div className="business" key={business.name + i}>

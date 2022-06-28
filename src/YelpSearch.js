@@ -13,7 +13,7 @@ export default function YelpSearch() {
   async function fetchYelp() {
     const data = await getYelp(query);
 
-    setYelp(data.results);
+    setYelp(data.businesses);
   }
 
   async function handleSubmit(e) {

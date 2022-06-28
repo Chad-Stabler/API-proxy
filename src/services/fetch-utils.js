@@ -1,5 +1,5 @@
 export async function getPokemon(filter) {
-  const rawData = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${filter}`);
+  const rawData = await fetch(`http://localhost:8888/.netlify/functions/poke?pokeQuery=${filter}`);
 
   const data = await rawData.json();
 
@@ -7,7 +7,7 @@ export async function getPokemon(filter) {
 }
 
 export async function getYelp(filter) {
-  const rawData = await fetch(`https://api.yelp.com/v3/businesses/search?location=${filter}`);
+  const rawData = await fetch(`http://localhost:8888/.netlify/functions/yelp?yelpQuery=${filter}`);
 
   const data = await rawData.json();
 
