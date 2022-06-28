@@ -32,7 +32,7 @@ export default function PokeSearch() {
           <input value={query} onChange={e => setQuery(e.target.value)} />
           <button>Look for your poké</button>
         </form>
-        {/* <PokeList pokemon={pokemon}/> */}
+        <PokeList pokemon={pokemon}/>
       </div>
     </div>
   );

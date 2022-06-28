@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.poke {
+  border: 1px solid orchid;
+  width: fit-content;
+  margin: 5px;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.poke img {
+  width: 150px;
+}
