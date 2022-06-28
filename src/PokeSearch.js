@@ -7,7 +7,6 @@ export default function PokeSearch() {
   const [query, setQuery] = useState([]);
 
   useEffect(() => {
-    setQuery('');
     fetchPokemon();
   }, []);
 

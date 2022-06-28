@@ -5,3 +5,11 @@ export async function getPokemon(filter) {
 
   return data;
 }
+
+export async function getYelp(filter) {
+  const rawData = await fetch(`https://api.yelp.com/v3/businesses/search?location=${filter}`);
+
+  const data = await rawData.json();
+
+  return data;
+}
