@@ -10,6 +10,8 @@ export default function PokeSearch() {
 
   useEffect(() => {
     fetchPokemon();
+    //frfbngio
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   async function fetchPokemon() {

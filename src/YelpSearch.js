@@ -10,6 +10,7 @@ export default function YelpSearch() {
 
   useEffect(() => {
     fetchYelp();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   async function fetchYelp() {
