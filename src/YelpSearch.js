@@ -1,19 +1,23 @@
 import BusinessList from './BusinessList';
 import { useState, useEffect } from 'react';
 import { getYelp } from './services/fetch-utils';
+import Spinner from './Spinner';
 
 export default function YelpSearch() {
   const [yelp, setYelp] = useState([]);
   const [query, setQuery] = useState('Portland');
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     fetchYelp();
   }, []);
 
   async function fetchYelp() {
+    setIsLoading(true);
     const data = await getYelp(query);
 
     setYelp(data.businesses);
+    setIsLoading(false);
   }
 
   async function handleSubmit(e) {
@@ -25,10 +29,13 @@ export default function YelpSearch() {
   }
 
   return (<div className='yelp-search'>
-    <form onSubmit={handleSubmit}>
-      <input value={query} onChange={e => setQuery(e.target.value)}/>
-      <button>Search this area</button>
-    </form>
-    <BusinessList businesses={yelp} />
+    {
+      isLoading ? <Spinner isLoading={isLoading} /> : <><form onSubmit={handleSubmit}>
+        <input value={query} onChange={e => setQuery(e.target.value)}/>
+        <button>Search this area</button>
+      </form>
+      <BusinessList businesses={yelp} />
+      </>
+    }
   </div>);
 }

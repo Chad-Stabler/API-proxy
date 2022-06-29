@@ -4,7 +4,7 @@ export default function BusinessList({ businesses = [] }) {
       businesses.map((business, i) => <div className="business" key={business.name + i}>
         <p>{business.name}</p>
         <img src={business.image_url}/>
-        <p>{business.is_closed ? 'open' : 'closed'}</p>
+        <p>{business.is_closed ? 'closed' : 'open'}</p>
       </div>)
     }
   </div>);

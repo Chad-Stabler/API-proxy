@@ -24,6 +24,24 @@
   color: white;
 }
 
+.spinner {
+  animation: spin .75s linear;
+}
+
+@keyframes spin {
+  25% {
+    transform: rotate(90deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(270deg);
+  }
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -37,7 +55,7 @@
   }
 }
 
-.poke {
+.poke, .business {
   border: 1px solid orchid;
   width: fit-content;
   margin: 5px;
@@ -45,6 +63,6 @@
   border-radius: 3px;
 }
 
-.poke img {
+.poke img, .business img {
   width: 150px;
 }
