@@ -8,6 +8,7 @@ function App() {
     <div>
       <PokeSearch />
       <YelpSearch />
+      <section className='spotify'></section>
     </div>
   );
 }
